@@ -1,18 +1,29 @@
-from flask import Flask
+from flask import Flask, render_template
 
 #app instance
 
 app= Flask(__name__)
 
 
-# app route
+# app routes
 @app.route('/')
 def home():
 
-    return "Hello"
+    return render_template('home.html')
+
+@app.route('/login')
+def login():
+
+    return render_template('login.html')
 
 
-    #run app
+@app.route('/register')
+def register():
+
+    return render_template('register.html')
+
+
+    #run app 
 
 
 if __name__=='__main__':
